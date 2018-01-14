@@ -11,9 +11,9 @@ export class Todo extends Component {
   }
 
   addTodoHandler = () => {
-    const { inputText } = this.state
-    if (!inputText) return
-    this.state.todos.push({ id: Date.now(), text: inputText })
+    const { inputText: text } = this.state
+    if (!text) return
+    this.state.todos.push({ id: Date.now(), text })
   }
 
   inputTextHandler = ({ value: inputText }) => this.setState({ inputText })
