@@ -22,9 +22,9 @@ export class Todo extends Component {
     const { todos } = this.state
     return (
       <div>
-        <div class="todo-list">
+        <ul class="todo-list">
           {todos.map(v => <Item key={v.id} text={v.text} />)}
-        </div>
+        </ul>
         <AddTodo inputHandler={inputTextHandler} btnHandler={addTodoHandler} />
       </div>
     )

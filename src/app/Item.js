@@ -1,1 +1,1 @@
-export default ({ text }) => <div>text</div>
+export default ({ text }) => <li>text</li>
