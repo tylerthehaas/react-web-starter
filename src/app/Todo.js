@@ -13,7 +13,8 @@ export class Todo extends Component {
   addTodoHandler = () => {
     const { inputText: text } = this.state
     if (!text) return
-    this.state.todos.push({ id: Date.now(), text })
+    const todos = [...this.state.todos, { id: Date.now(), text }]
+    this.setState({ todos })
   }
 
   inputTextHandler = ({ target: { value: inputText } }) =>
