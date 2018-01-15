@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Item from './Item'
+import AddTodo from './AddTodo'
 
 export class Todo extends Component {
   constructor() {
@@ -24,14 +25,14 @@ export class Todo extends Component {
     const { todos, inputText } = this.state
     return (
       <div>
-        <ul class="todo-list">
-          {todos.map(v => <Item key={v.id} text={v.text} />)}
-        </ul>
         <AddTodo
-          btnHandler={addTodoHandler}
-          inputHandler={inputTextHandler}
+          btnHandler={this.addTodoHandler}
+          inputHandler={this.inputTextHandler}
           inputText={inputText}
         />
+        <ul className="todo-list">
+          {todos.map(v => <Item key={v.id} text={v.text} />)}
+        </ul>
       </div>
     )
   }
