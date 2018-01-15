@@ -14,7 +14,7 @@ export class Todo extends Component {
     const { inputText: text } = this.state
     if (!text) return
     const todos = [...this.state.todos, { id: Date.now(), text }]
-    this.setState({ todos })
+    this.setState({ todos, inputText: '' })
   }
 
   inputTextHandler = ({ target: { value: inputText } }) =>
