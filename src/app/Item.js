@@ -1,1 +1,3 @@
-export default ({ text }) => <li>text</li>
+import React from 'react'
+
+export default ({ text }) => <li>{text}</li>
