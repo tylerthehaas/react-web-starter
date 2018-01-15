@@ -16,16 +16,21 @@ export class Todo extends Component {
     this.state.todos.push({ id: Date.now(), text })
   }
 
-  inputTextHandler = ({ value: inputText }) => this.setState({ inputText })
+  inputTextHandler = ({ target: { value: inputText } }) =>
+    this.setState({ inputText })
 
   render() {
-    const { todos } = this.state
+    const { todos, inputText } = this.state
     return (
       <div>
         <ul class="todo-list">
           {todos.map(v => <Item key={v.id} text={v.text} />)}
         </ul>
-        <AddTodo inputHandler={inputTextHandler} btnHandler={addTodoHandler} />
+        <AddTodo
+          btnHandler={addTodoHandler}
+          inputHandler={inputTextHandler}
+          inputText={inputText}
+        />
       </div>
     )
   }
